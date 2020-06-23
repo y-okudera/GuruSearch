@@ -25,7 +25,7 @@ final class RestaurantListRouter {
         view.restaurantListProvider = .init(restaurants: [])
         let router = RestaurantListRouter(viewController: view)
 
-        let restSearchDataStore = RestSearchDataStoreProvider.provide()
+        let restSearchDataStore = RestSearchDataStoreProvider.provide(apiClient: APIClient())
         let restSearchRequest = RestSearchRequest(areacodeL: gareaLarge.areacodeL)
         let interactor = RestaurantListInteractor(restSearchDataStore: restSearchDataStore, request: restSearchRequest)
 

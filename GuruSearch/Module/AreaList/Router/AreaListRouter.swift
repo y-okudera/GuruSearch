@@ -26,7 +26,7 @@ final class AreaListRouter {
         view.areaListProvider = .init(gareaLarge: [])
         let router = AreaListRouter(viewController: view)
         
-        let gAreaLargeSearchDataStore = GAreaLargeSearchDataStoreProvider.provide()
+        let gAreaLargeSearchDataStore = GAreaLargeSearchDataStoreProvider.provide(apiClient: APIClient())
         let gAreaLargeSearchRequest = GAreaLargeSearchRequest()
         let interactor = AreaListInteractor(gAreaLargeSearchDataStore: gAreaLargeSearchDataStore, request: gAreaLargeSearchRequest)
         

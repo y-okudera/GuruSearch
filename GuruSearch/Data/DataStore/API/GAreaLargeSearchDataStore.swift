@@ -9,8 +9,8 @@
 import Foundation
 
 enum GAreaLargeSearchDataStoreProvider {
-    static func provide() -> GAreaLargeSearchDataStore {
-        return GAreaLargeSearchDataStoreImpl()
+    static func provide(apiClient: APIClient) -> GAreaLargeSearchDataStore {
+        return GAreaLargeSearchDataStoreImpl(apiClient: apiClient)
     }
 }
 
@@ -20,8 +20,15 @@ protocol GAreaLargeSearchDataStore: AnyObject {
 }
 
 final class GAreaLargeSearchDataStoreImpl: GAreaLargeSearchDataStore {
+
+    var apiClient: APIClient
+
+    init(apiClient: APIClient) {
+        self.apiClient = apiClient
+    }
+
     func request(_ request: GAreaLargeSearchRequest,
                  completion: @escaping (Result<GAreaLargeSearchRequest.Response, APIError<GAreaLargeSearchRequest>>) -> Void) {
-        APIClient.request(request: request, completion: completion)
+        self.apiClient.request(request: request, completion: completion)
     }
 }

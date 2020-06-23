@@ -8,13 +8,13 @@
 
 import Alamofire
 
-enum APIClient {
+final class APIClient {
     
     /// API Request
-    static func request<T: APIRequestable>(request: T,
-                                           queue: DispatchQueue = .main,
-                                           decoder: DataDecoder = defaultDataDecoder(),
-                                           completion: @escaping(Swift.Result<T.Response, APIError<T>>) -> Void) {
+    func request<T: APIRequestable>(request: T,
+                                    queue: DispatchQueue = .main,
+                                    decoder: DataDecoder = defaultDataDecoder(),
+                                    completion: @escaping(Swift.Result<T.Response, APIError<T>>) -> Void) {
         
         guard let urlRequest = request.makeURLRequest() else {
             completion(.failure(.invalidRequest))
@@ -25,19 +25,20 @@ enum APIClient {
         
         let dataRequest = AF.request(urlRequest)
             .validate(statusCode: 200..<600)
-            .responseDecodable(of: T.Response.self, queue: queue, decoder: decoder) { dataResponse in
+            .responseDecodable(of: T.Response.self, queue: queue, decoder: decoder) { [weak self] dataResponse in
+                guard let `self` = self else { return }
                 
                 let httpURLResponse = dataResponse.response
                 let afError = dataResponse.error
                 // Verify http status code.
-                if let statusCodeError = verifyResponseStatusCode(response: httpURLResponse, afError: afError, request: request) {
+                if let statusCodeError = self.verifyResponseStatusCode(response: httpURLResponse, afError: afError, request: request) {
                     completion(.failure(statusCodeError))
                     return
                 }
                 
                 // Whether response data is nil.
                 guard let data = dataResponse.data else {
-                    let apiError = afErrorToAPIError(afError: afError, request: request)
+                    let apiError = self.afErrorToAPIError(afError: afError, request: request)
                     completion(.failure(apiError))
                     return
                 }
@@ -54,12 +55,12 @@ enum APIClient {
                     
                     // Whether the error object is `.responseSerializationFailed`.
                     if afError.isResponseSerializationError {
-                        let apiError = decodeErrorResponse(errorResponseData: data, request: request)
+                        let apiError = self.decodeErrorResponse(errorResponseData: data, request: request)
                         completion(.failure(apiError))
                         return
                     }
                     
-                    let apiError = afErrorToAPIError(afError: afError, request: request)
+                    let apiError = self.afErrorToAPIError(afError: afError, request: request)
                     completion(.failure(apiError))
                 }
         }
@@ -76,7 +77,7 @@ enum APIClient {
     }
     
     /// Verify http status code.
-    private static func verifyResponseStatusCode<T: APIRequestable>(response: HTTPURLResponse?, afError: AFError?, request: T) -> APIError<T>? {
+    private func verifyResponseStatusCode<T: APIRequestable>(response: HTTPURLResponse?, afError: AFError?, request: T) -> APIError<T>? {
         guard let status = response?.status else {
             let apiError = afErrorToAPIError(afError: afError, request: request)
             return apiError
@@ -95,7 +96,7 @@ enum APIClient {
     }
     
     /// Convert error type from AFError to APIError.
-    private static func afErrorToAPIError<T: APIRequestable>(afError: AFError?, request: T) -> APIError<T> {
+    private func afErrorToAPIError<T: APIRequestable>(afError: AFError?, request: T) -> APIError<T> {
         
         guard let afError = afError else {
             print("data and error are nil.")
@@ -129,7 +130,7 @@ enum APIClient {
     ///   - errorResponseData: API error data
     ///   - request: APIRequest
     /// - Returns: APIError
-    private static func decodeErrorResponse<T: APIRequestable>(errorResponseData: Data, request: T) -> APIError<T> {
+    private func decodeErrorResponse<T: APIRequestable>(errorResponseData: Data, request: T) -> APIError<T> {
         if let apiErrorObject = request.decode(errorResponseData: errorResponseData) {
             print("apiErrorObject:\(apiErrorObject)")
             return .errorResponse(errObject: apiErrorObject)

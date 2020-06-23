@@ -9,8 +9,8 @@
 import Foundation
 
 enum RestSearchDataStoreProvider {
-    static func provide() -> RestSearchDataStore {
-        return RestSearchDataStoreImpl()
+    static func provide(apiClient: APIClient) -> RestSearchDataStore {
+        return RestSearchDataStoreImpl(apiClient: apiClient)
     }
 }
 
@@ -20,8 +20,15 @@ protocol RestSearchDataStore: AnyObject {
 }
 
 final class RestSearchDataStoreImpl: RestSearchDataStore {
+
+    var apiClient: APIClient
+
+    init(apiClient: APIClient) {
+        self.apiClient = apiClient
+    }
+    
     func request(_ request: RestSearchRequest,
                  completion: @escaping (Result<RestSearchRequest.Response, APIError<RestSearchRequest>>) -> Void) {
-        APIClient.request(request: request, completion: completion)
+        self.apiClient.request(request: request, completion: completion)
     }
 }
