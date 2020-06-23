@@ -1,5 +1,5 @@
 # GuruSearch
-レストラン検索アプリ
+デモアプリ（レストラン検索）
 
 ## Generamba
 以下のコマンドでソースコードを自動生成します。
@@ -7,5 +7,6 @@
 
 ## cocoapods-keys
 APIキーは、cocoapods-keysで.envファイルに書き出しています。
+
 .envファイルはGit管理対象外にしているので、
 動作確認する際には、[ぐるなびWebサービス](https://api.gnavi.co.jp/api/) からAPIキーを発行してください。
