@@ -21,7 +21,11 @@ protocol RestaurantListView: AnyObject {
 
 final class RestaurantListViewController: UIViewController {
     
-    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView! {
+        didSet {
+            tableView.delegate = self
+        }
+    }
     var presenter: RestaurantListPresentable!
     var restaurantListProvider: RestaurantListProvider!
     
@@ -38,6 +42,14 @@ extension RestaurantListViewController {
 
         startAnimating()
         presenter.viewDidLoad()
+    }
+}
+
+extension RestaurantListViewController: UITableViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.isNearBottomEdge() {
+            presenter.fetchMore()
+        }
     }
 }
 

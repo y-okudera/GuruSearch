@@ -72,6 +72,7 @@
 		FC82BFEE24A197F5002B367C /* MaterialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC82BFED24A197F5002B367C /* MaterialButton.swift */; };
 		FC82BFF024A19AEF002B367C /* Notification+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC82BFEF24A19AEF002B367C /* Notification+.swift */; };
 		FC82BFF224A19EEA002B367C /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC82BFF124A19EEA002B367C /* WebKit.framework */; };
+		FC83FEFA24A2331D005372F5 /* UIScrollView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC83FEF924A2331D005372F5 /* UIScrollView+.swift */; };
 		FC88C200249D137F0098BE27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC88C1FF249D137F0098BE27 /* Assets.xcassets */; };
 		FC88C20E249D13800098BE27 /* GuruSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC88C20D249D13800098BE27 /* GuruSearchTests.swift */; };
 		FC88C219249D13800098BE27 /* GuruSearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC88C218249D13800098BE27 /* GuruSearchUITests.swift */; };
@@ -181,6 +182,7 @@
 		FC82BFED24A197F5002B367C /* MaterialButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialButton.swift; sourceTree = "<group>"; };
 		FC82BFEF24A19AEF002B367C /* Notification+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+.swift"; sourceTree = "<group>"; };
 		FC82BFF124A19EEA002B367C /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		FC83FEF924A2331D005372F5 /* UIScrollView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+.swift"; sourceTree = "<group>"; };
 		FC88C1F3249D137E0098BE27 /* GuruSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuruSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC88C1FF249D137F0098BE27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC88C209249D13800098BE27 /* GuruSearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuruSearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -463,6 +465,7 @@
 				FC82BFDE24A0E879002B367C /* UIAlertController+.swift */,
 				FC82BFE824A11C64002B367C /* UIImageView+.swift */,
 				FC82BFEA24A192C0002B367C /* Int+.swift */,
+				FC83FEF924A2331D005372F5 /* UIScrollView+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -920,6 +923,7 @@
 				FC82BFCD24A0B85D002B367C /* GAreaLargeSearchResponse.swift in Sources */,
 				FC5942BA249FCFF7002A210F /* RelaxedString.swift in Sources */,
 				B2311EE0FB95ACDB03BFB242 /* RestaurantListInteractor.swift in Sources */,
+				FC83FEFA24A2331D005372F5 /* UIScrollView+.swift in Sources */,
 				04364BEB1CBCF6EA27E11BA7 /* RestaurantListPresenter.swift in Sources */,
 				FC82BFE524A0EA5D002B367C /* AreaListProvider.swift in Sources */,
 				FC82BFDD24A0E728002B367C /* UITableViewCell+.swift in Sources */,

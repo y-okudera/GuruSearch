@@ -17,6 +17,7 @@ protocol RestaurantListPresentable: AnyObject {
     var interactor: RestaurantListUsecaseInput { get }
     var gareaLarge: GareaLarge { get }
     func viewDidLoad()
+    func fetchMore()
 }
 
 /// Interactor -> Presenter
@@ -42,8 +43,12 @@ final class RestaurantListPresenter: RestaurantListPresentable {
     }
 
     func viewDidLoad() {
-        interactor.fetchRestaurantList()
+        fetchMore()
         view?.setNavigationTitle(title: gareaLarge.areanameL)
+    }
+
+    func fetchMore() {
+        interactor.fetchRestaurantList()
     }
 }
 

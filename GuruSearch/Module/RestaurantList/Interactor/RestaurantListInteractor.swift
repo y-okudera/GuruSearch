@@ -47,14 +47,19 @@ final class RestaurantListInteractor: RestaurantListUsecaseInput {
             return
         }
 
+        // Cancel if requesting.
+        self.restSearchDataStore.cancel()
+
         let url = restaurantUrl.toURL()
-        // presenterに通知
-        output?.tappedDetailButton(url: url)
+        self.output?.tappedDetailButton(url: url)
     }
 
     func fetchRestaurantList() {
+        if self.restSearchDataStore.isRequesting() {
+            return
+        }
         self.request.incrementPage()
-        restSearchDataStore.request(request) { [weak self] result in
+        self.restSearchDataStore.request(request) { [weak self] result in
             switch result {
             case .success(let response):
                 self?.output?.restaurantsFetchSucceeded(restaurants: response)

@@ -16,7 +16,7 @@ final class RestSearchRequest: APIRequestable {
     let path: String = "/RestSearchAPI/v3"
     var parameters: [String: Any] = [:]
     
-    private let hitPerPage = 50
+    private let hitPerPage = 25
     private var offsetPage: Int = 0 {
         didSet {
             self.parameters["offset_page"] = "\(offsetPage)"
