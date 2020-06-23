@@ -1,0 +1,11 @@
+# carthage bootstrap --platform iOS --cache-builds
+# carthage update --platform iOS --cache-builds <new dependencies>
+
+## Infra
+github "Alamofire/Alamofire" == 5.2.1
+github "realm/realm-cocoa" == 5.0.3
+
+## UI
+github "kean/Nuke" == 9.1.1
+github "hackiftekhar/IQKeyboardManager" == 6.5.0
+github "ninjaprox/NVActivityIndicatorView" == 4.8.0

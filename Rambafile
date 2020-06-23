@@ -1,0 +1,34 @@
+### Headers settings
+company: yuoku
+
+### Xcode project settings
+project_name: GuruSearch
+xcodeproj_path: GuruSearch.xcodeproj
+
+### Code generation settings section
+# The main project target name
+project_target: GuruSearch
+
+# The file path for new modules
+project_file_path: GuruSearch/Module
+
+# The Xcode group path to new modules
+project_group_path: GuruSearch/Module
+
+### Tests generation settings section
+# The tests target name
+test_target: GuruSearchTests
+
+# The file path for new tests
+test_file_path: GuruSearchTests/
+
+# The Xcode group path to new tests
+test_group_path: GuruSearchTests/
+
+### Dependencies settings section
+podfile_path: Podfile
+cartfile_pasth: Cartfile
+
+### Templates
+templates:
+- {name: viper_module, local: Templates}

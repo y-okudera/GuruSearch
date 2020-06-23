@@ -1,0 +1,5 @@
+github "Alamofire/Alamofire" "5.2.1"
+github "hackiftekhar/IQKeyboardManager" "v6.5.0"
+github "kean/Nuke" "9.1.1"
+github "ninjaprox/NVActivityIndicatorView" "4.8.0"
+github "realm/realm-cocoa" "v5.0.3"

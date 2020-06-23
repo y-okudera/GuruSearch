@@ -1,0 +1,33 @@
+/* 
+  Localizable.strings
+  GuruSearch
+
+  Created by okudera on 2020/06/23.
+  Copyright © 2020 yuoku. All rights reserved.
+*/
+
+// MARK: - AreaList
+
+"AreaList" = "エリア一覧";
+
+"Yen" = "円";
+"Minute" = "分";
+"ShopDetail" = "お店の詳細\nはこちら >";
+"ShopDetailDisabled" = "お店の詳細";
+
+// MARK: - APIError
+
+"Cancelled" = "通信をキャンセルしました。";
+"Unauthorized" = "認証に失敗しました。";
+"Forbidden" = "アクセスが拒否されました。";
+"ConnectionError" = "通信に失敗しました。\n通信状況をご確認ください。";
+"TimedOut" = "タイムアウトしました。\n通信状況をご確認ください。";
+"DecodeError" = "デコードに失敗しました。";
+"InvalidRequest" = "無効なリクエストです。";
+"InvalidResponse" = "無効なレスポンスです。";
+"DefaultErrorMessage" = "エラーが発生しました。";
+
+// MARK: - NetworkReachabilityError
+
+"NotReachable" = "ネットワークに接続されていません。\n通信状況をご確認ください。";
+"OnlyViaWiFi" = "Wi-FiをONにしてください。";

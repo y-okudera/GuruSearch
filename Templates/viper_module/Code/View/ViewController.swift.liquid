@@ -1,0 +1,38 @@
+//
+//  {{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import UIKit
+
+/// Presenter -> View
+///
+/// PresenterからViewへのUI更新を定義
+protocol {{ module_info.name }}View: AnyObject {
+    func reloadView()
+}
+
+final class {{ module_info.name }}ViewController: UIViewController {
+    
+    var presenter: {{ module_info.name }}Presentable!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setup()
+    }
+}
+
+extension {{ module_info.name }}ViewController {
+    private func setup() {
+        
+    }
+}
+
+extension {{ module_info.name }}ViewController: {{ module_info.name }}View {
+    func reloadView() {
+        
+    }
+}
