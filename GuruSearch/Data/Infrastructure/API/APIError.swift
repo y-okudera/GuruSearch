@@ -9,6 +9,8 @@
 import Foundation
 
 enum APIError<T: APIRequestable>: Error {
+    /// 通信状況チェックエラー
+    case reachabilityError(NetworkReachabilityError) 
     /// キャンセル
     case cancelled
     /// 認証に失敗した場合、または未認証(HTTP status code 401)
@@ -22,7 +24,7 @@ enum APIError<T: APIRequestable>: Error {
     /// レスポンスのデコード失敗
     case decodeError
     /// エラーレスポンス
-    case errorResponse(errObject: T.ErrorResponse)
+    case errorResponse(T.ErrorResponse)
     /// 無効なリクエスト
     case invalidRequest
     /// 無効なレスポンス
@@ -36,6 +38,8 @@ extension APIError: LocalizedError {
     /// - Note: 各ケースのメッセージはダイアログで使えるようにするためにローカライズのキーだけ決めておくから、stringsファイルで定義してね
     var errorDescription: String? {
         switch self {
+            case .reachabilityError(let reachabilityError):
+                return reachabilityError.errorDescription
             case .cancelled:
                 return "Cancelled".localized()
             case .unauthorized:

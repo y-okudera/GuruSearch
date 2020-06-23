@@ -73,7 +73,7 @@ final class RestaurantListInteractor: RestaurantListUsecaseInput {
     
     private func apiErrorToMessage(apiError: APIError<RestSearchRequest>) -> String? {
         switch apiError {
-        case .errorResponse(errObject: let errorResponse):
+        case .errorResponse(let errorResponse):
             let errorMessages = errorResponse.error.compactMap { $0.message }
             let errorMessage = errorMessages.joined(separator: "\n")
             return errorMessage

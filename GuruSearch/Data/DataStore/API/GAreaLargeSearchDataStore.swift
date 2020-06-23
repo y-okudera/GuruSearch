@@ -29,6 +29,14 @@ final class GAreaLargeSearchDataStoreImpl: GAreaLargeSearchDataStore {
 
     func request(_ request: GAreaLargeSearchRequest,
                  completion: @escaping (Result<GAreaLargeSearchRequest.Response, APIError<GAreaLargeSearchRequest>>) -> Void) {
-        self.apiClient.request(request: request, completion: completion)
+        NetworkConnection.isReachable { [weak self] result in
+            switch result {
+            case .success:
+                self?.apiClient.request(request: request, completion: completion)
+                
+            case .failure(let reachabilityError):
+                completion(.failure(.reachabilityError(reachabilityError)))
+            }
+        }
     }
 }

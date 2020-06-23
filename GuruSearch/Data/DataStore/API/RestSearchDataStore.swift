@@ -39,10 +39,18 @@ final class RestSearchDataStoreImpl: RestSearchDataStore {
     
     func request(_ request: RestSearchRequest,
                  completion: @escaping (Result<RestSearchRequest.Response, APIError<RestSearchRequest>>) -> Void) {
-        self.request = request
-        self.apiClient.request(request: request) { [weak self] result in
-            self?.request = nil
-            completion(result)
+        NetworkConnection.isReachable { [weak self] result in
+            switch result {
+            case .success:
+                self?.request = request
+                self?.apiClient.request(request: request) { [weak self] result in
+                    self?.request = nil
+                    completion(result)
+                }
+
+            case .failure(let reachabilityError):
+                completion(.failure(.reachabilityError(reachabilityError)))
+            }
         }
     }
 

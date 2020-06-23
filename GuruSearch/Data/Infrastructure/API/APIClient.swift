@@ -133,7 +133,7 @@ final class APIClient {
     private func decodeErrorResponse<T: APIRequestable>(errorResponseData: Data, request: T) -> APIError<T> {
         if let apiErrorObject = request.decode(errorResponseData: errorResponseData) {
             print("apiErrorObject:\(apiErrorObject)")
-            return .errorResponse(errObject: apiErrorObject)
+            return .errorResponse(apiErrorObject)
         }
         print("Decoding failure.")
         return .decodeError
