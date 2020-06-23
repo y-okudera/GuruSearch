@@ -1,0 +1,44 @@
+//
+//  {{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import UIKit
+
+protocol {{ module_info.name }}Wireframe: AnyObject {
+    // func showNext()
+}
+
+final class {{ module_info.name }}Router {
+    
+    private weak var viewController: UIViewController?
+    
+    private init(viewController: UIViewController) {
+        self.viewController = viewController
+    }
+
+    static func assembleModules() -> UIViewController {
+        
+        let view: {{ module_info.name }}ViewController = .instantiate()
+        let router = {{ module_info.name }}Router(viewController: view)
+        let interactor = {{ module_info.name }}Interactor()
+        
+        let presenter = {{ module_info.name }}Presenter(view: view, router: router, interactor: interactor)
+        
+        // Interactorの通知先を設定
+        interactor.output = presenter
+        // ViewにPresenterを設定
+        view.presenter = presenter
+        
+        return view
+    }
+}
+
+extension {{ module_info.name }}Router: {{ module_info.name }}Wireframe {
+    // func showNext() {
+    // 
+    // }
+}

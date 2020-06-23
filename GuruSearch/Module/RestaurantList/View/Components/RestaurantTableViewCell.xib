@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="RestaurantTableViewCell" id="KGk-i7-Jjw" customClass="RestaurantTableViewCell" customModule="GuruSearch" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="550"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="550"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="vsc-uQ-lYP">
+                        <rect key="frame" x="17.5" y="8" width="285" height="190"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="restaurant_l" translatesAutoresizingMaskIntoConstraints="NO" id="ykK-KP-eOX">
+                                <rect key="frame" x="0.0" y="0.0" width="190" height="190"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="190" id="Zwy-gj-50g"/>
+                                    <constraint firstAttribute="width" secondItem="ykK-KP-eOX" secondAttribute="height" multiplier="1:1" id="yKv-kU-Fh9"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Aue-ZX-3v0">
+                                <rect key="frame" x="190" y="0.0" width="95" height="190"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="restaurant" translatesAutoresizingMaskIntoConstraints="NO" id="qgo-M8-GIW">
+                                        <rect key="frame" x="0.0" y="0.0" width="95" height="95"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="qgo-M8-GIW" secondAttribute="height" multiplier="1:1" id="gBR-ep-JJY"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wh4-5o-gL5" customClass="MaterialButton" customModule="GuruSearch" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="95" width="95" height="95"/>
+                                        <color key="backgroundColor" red="1" green="0.25098039220000001" blue="0.41176470590000003" alpha="1" colorSpace="deviceRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Wh4-5o-gL5" secondAttribute="height" multiplier="1:1" id="jeK-ZU-MHM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="17"/>
+                                        <state key="normal">
+                                            <string key="title">お店の詳細
+はこちら &gt;</string>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="tappedDetailButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="bYO-zg-HIG"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Wh4-5o-gL5" firstAttribute="height" secondItem="qgo-M8-GIW" secondAttribute="height" id="m0x-WT-Avh"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="qgo-M8-GIW" firstAttribute="height" secondItem="ykK-KP-eOX" secondAttribute="height" multiplier="0.5" id="7oU-La-u7Q"/>
+                        </constraints>
+                    </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="レストラン名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6vZ-HN-ED4">
+                        <rect key="frame" x="16" y="214" width="288" height="27"/>
+                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7I7-Nn-F98">
+                        <rect key="frame" x="16" y="249" width="288" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="vNo-OP-e9a"/>
+                        </constraints>
+                        <string key="text">line station
+walk 分</string>
+                        <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ouP-ri-86k">
+                        <rect key="frame" x="16" y="297" width="288" height="106"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0Kx-Jx-Qxp">
+                                <rect key="frame" x="0.0" y="0.0" width="288" height="30"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yen" translatesAutoresizingMaskIntoConstraints="NO" id="0ft-0U-jrf">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="Ghp-oE-vbv"/>
+                                            <constraint firstAttribute="width" constant="30" id="o2i-h5-nFv"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2,500円" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Val-39-3Qp">
+                                        <rect key="frame" x="38" y="0.0" width="250" height="30"/>
+                                        <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hyw-hC-ODb">
+                                <rect key="frame" x="0.0" y="38" width="288" height="30"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="time" translatesAutoresizingMaskIntoConstraints="NO" id="gJf-W3-BXl">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="arY-Yk-8UL"/>
+                                            <constraint firstAttribute="height" constant="30" id="mzI-8r-2xn"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17:00～24:00" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QnA-fq-VK2">
+                                        <rect key="frame" x="38" y="0.0" width="250" height="30"/>
+                                        <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="LAi-89-xxa">
+                                <rect key="frame" x="0.0" y="76" width="288" height="30"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tel" translatesAutoresizingMaskIntoConstraints="NO" id="0W6-wC-80j">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="SkW-xC-sey"/>
+                                            <constraint firstAttribute="width" constant="30" id="eUz-aa-Icz"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="090-1234-5678" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Kd-Zc-y2n">
+                                        <rect key="frame" x="38" y="0.0" width="250" height="30"/>
+                                        <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="1Kd-Zc-y2n" firstAttribute="trailing" secondItem="Val-39-3Qp" secondAttribute="trailing" id="Olx-QS-8xA"/>
+                            <constraint firstItem="QnA-fq-VK2" firstAttribute="trailing" secondItem="Val-39-3Qp" secondAttribute="trailing" id="rMG-YD-d93"/>
+                            <constraint firstAttribute="trailing" secondItem="Val-39-3Qp" secondAttribute="trailing" id="yVQ-tC-cMv"/>
+                        </constraints>
+                    </stackView>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="PR文章" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="TOA-RC-ZCf">
+                        <rect key="frame" x="16" y="411" width="288" height="120"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="120" id="7I9-JV-vDg"/>
+                        </constraints>
+                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="vsc-uQ-lYP" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="AMT-wL-I6X"/>
+                    <constraint firstItem="vsc-uQ-lYP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="B71-Mj-ynP"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="ouP-ri-86k" secondAttribute="trailing" id="Hrv-Mt-sAf"/>
+                    <constraint firstItem="ouP-ri-86k" firstAttribute="top" secondItem="7I7-Nn-F98" secondAttribute="bottom" constant="8" id="JIq-CW-VHB"/>
+                    <constraint firstItem="vsc-uQ-lYP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="OZ7-7T-cgV"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="TOA-RC-ZCf" secondAttribute="bottom" constant="8" id="Pd8-w0-ffj"/>
+                    <constraint firstAttribute="trailing" secondItem="6vZ-HN-ED4" secondAttribute="trailing" constant="16" id="SS0-Kz-GdV"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="vsc-uQ-lYP" secondAttribute="trailing" constant="16" id="WCQ-QT-nWd"/>
+                    <constraint firstItem="TOA-RC-ZCf" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="Yzb-qf-VXt"/>
+                    <constraint firstAttribute="trailing" secondItem="7I7-Nn-F98" secondAttribute="trailing" constant="16" id="eoI-TR-1Cs"/>
+                    <constraint firstItem="6vZ-HN-ED4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="lj6-jm-0so"/>
+                    <constraint firstItem="TOA-RC-ZCf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="niA-cq-iHG"/>
+                    <constraint firstItem="7I7-Nn-F98" firstAttribute="top" secondItem="6vZ-HN-ED4" secondAttribute="bottom" constant="8" id="oK8-CM-XCK"/>
+                    <constraint firstItem="ouP-ri-86k" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="s6p-1q-o2h"/>
+                    <constraint firstItem="TOA-RC-ZCf" firstAttribute="top" secondItem="ouP-ri-86k" secondAttribute="bottom" constant="8" id="vhM-qi-Oev"/>
+                    <constraint firstItem="7I7-Nn-F98" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="xuy-dg-iaw"/>
+                    <constraint firstItem="6vZ-HN-ED4" firstAttribute="top" secondItem="vsc-uQ-lYP" secondAttribute="bottom" constant="16" id="zXC-dv-6mR"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="accessLabel" destination="7I7-Nn-F98" id="ErD-QR-Uyw"/>
+                <outlet property="budgetLabel" destination="Val-39-3Qp" id="b3m-Ed-pdt"/>
+                <outlet property="detailButton" destination="Wh4-5o-gL5" id="ve1-z2-WC4"/>
+                <outlet property="mainThumbnailImageView" destination="ykK-KP-eOX" id="4ba-0A-cRR"/>
+                <outlet property="nameLabel" destination="6vZ-HN-ED4" id="ZYY-Hc-MeI"/>
+                <outlet property="openTimeLabel" destination="QnA-fq-VK2" id="B9r-Bq-WMQ"/>
+                <outlet property="prTextView" destination="TOA-RC-ZCf" id="sze-6s-HOx"/>
+                <outlet property="sub1ThumbnailImageView" destination="qgo-M8-GIW" id="5aQ-wt-vic"/>
+                <outlet property="telLabel" destination="1Kd-Zc-y2n" id="koo-9v-iMz"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="131.91964285714286"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="restaurant" width="64" height="64"/>
+        <image name="restaurant_l" width="128" height="128"/>
+        <image name="tel" width="32" height="32"/>
+        <image name="time" width="32" height="32"/>
+        <image name="yen" width="28" height="32"/>
+    </resources>
+</document>

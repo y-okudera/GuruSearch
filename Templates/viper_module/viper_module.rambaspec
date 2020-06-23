@@ -1,0 +1,23 @@
+# Template information section
+name: "viper_module"
+summary: "for VIPER"
+author: "Yuki Okudera"
+version: "1.0.0"
+license: "MIT"
+
+# The declarations for code files
+
+code_files:
+
+# Interactor
+- {name: Interactor/Interactor.swift, path: Code/Interactor/Interactor.swift.liquid}
+
+# Presenter
+- {name: Presenter/Presenter.swift, path: Code/Presenter/Presenter.swift.liquid}
+
+# Router
+- {name: Router/Router.swift, path: Code/Router/Router.swift.liquid}
+
+# ViewController
+- {name: View/ViewController.swift, path: Code/View/ViewController.swift.liquid}
+- {name: View/ViewController.storyboard, path: Code/View/ViewController.storyboard.liquid}

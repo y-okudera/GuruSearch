@@ -1,0 +1,36 @@
+//
+//  {{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import Foundation
+
+/// Presenter -> Interactor
+///
+/// PresenterからInteractorへの処理依頼を定義
+protocol {{ module_info.name }}UsecaseInput {
+
+    var output: {{ module_info.name }}UsecaseOutput? { get }
+    // Example
+    // var restSearchDataStore: RestSearchDataStore { get }
+    // func fetchRestaurantList()
+}
+
+final class {{ module_info.name }}Interactor: {{ module_info.name }}UsecaseInput {
+    weak var output: {{ module_info.name }}UsecaseOutput?
+
+    // let restSearchDataStore: RestSearchDataStore
+    // var request: RestSearchRequest
+
+    // init(restSearchDataStore: RestSearchDataStore, request: RestSearchRequest) {
+    //     self.restSearchDataStore = restSearchDataStore
+    //     self.request = request
+    // }
+
+    // func fetchRestaurantList() {
+    // 
+    // }
+}

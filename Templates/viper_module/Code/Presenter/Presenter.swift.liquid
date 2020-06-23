@@ -1,0 +1,53 @@
+//
+//  {{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import Foundation
+
+/// View -> Presenter
+///
+/// ViewからPresenterへの処理依頼を定義
+protocol {{ module_info.name }}Presentable: AnyObject {
+    var view: {{ module_info.name }}View? { get }
+    var router: {{ module_info.name }}Wireframe { get }
+    var interactor: {{ module_info.name }}UsecaseInput { get }
+    func viewDidLoad()
+}
+
+/// Interactor -> Presenter
+///
+/// InteractorからPresenterへの処理結果の通知を定義
+protocol {{ module_info.name }}UsecaseOutput: AnyObject {
+    // func restaurantsFetchSucceeded(restaurants: Restaurants)
+    // func restaurantsFetchFailed(errorMessage: String?)
+}
+
+final class {{ module_info.name }}Presenter: {{ module_info.name }}Presentable {
+    weak var view: {{ module_info.name }}View?
+    let router: {{ module_info.name }}Wireframe
+    let interactor: {{ module_info.name }}UsecaseInput
+    
+    init(view: {{ module_info.name }}View?, router: {{ module_info.name }}Wireframe, interactor: {{ module_info.name }}UsecaseInput) {
+        self.view = view
+        self.interactor = interactor
+        self.router = router
+    }
+
+    func viewDidLoad() {
+    	
+    }
+}
+
+extension {{ module_info.name }}Presenter: {{ module_info.name }}UsecaseOutput {
+    // func restaurantsFetchSucceeded(restaurants: Restaurants) {
+    //     view?.appendRestaurants(restaurants: restaurants.rest)
+    // }
+
+    // func restaurantsFetchFailed(errorMessage: String?) {
+    //     
+    // }
+}
